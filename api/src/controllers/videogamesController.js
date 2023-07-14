@@ -21,9 +21,13 @@ const getApiVideogames = async () => {
 
         const apiInfo = results.map((game) => {
             return {
-                id: game.id,
+                // id: game.id,
                 name: game.name,
+                //description: game.description_raw,
                 image: game.background_image,
+                // released: game.released,
+                // rating: game.rating,
+                // platforms: game.platforms.map((platform) => platform.platform.name),
                 genres: game.genres.map((genre) => genre.name),
             };
         });

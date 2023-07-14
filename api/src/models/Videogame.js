@@ -12,7 +12,7 @@ module.exports = (sequelize) => {
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     description: {
       type: DataTypes.STRING,
@@ -20,19 +20,15 @@ module.exports = (sequelize) => {
     },
     platforms: {
       type: DataTypes.STRING,
-      allowNull: true,
     },
     image: {
       type: DataTypes.STRING,
-      allowNull: true,
     },
     released: {
       type: DataTypes.INTEGER,
-      allowNull: false,
     },
     rating: {
       type: DataTypes.INTEGER,
-      allowNull: false,
     },
   }, { freezeTableName: true, timestamps: false }); //Congelar nombre de la tabla para que sequelize no lo cambie a plural, Omitir datos de creacion de las tablas
 };
