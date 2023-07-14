@@ -1,0 +1,18 @@
+.cardContainer {
+    background-color: aliceblue;
+    border: solid 2px black;
+    border-radius: 10px;
+    width: 18rem;
+    height: 18rem;
+    margin: 15px;
+}
+
+.cardTitle {
+    color: brown;
+}
+
+.cardImage {
+    border-radius: 15px;
+    margin-top: 10px;
+    width: 200px;
+}
