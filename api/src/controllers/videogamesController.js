@@ -62,23 +62,6 @@ const getAllVideogames = async () => {
     }
 }
 
-// const getVideogameById = async (id) => {
-//     if (isNaN(id)) {
-//         const game = await Videogame.findByPK(id, {
-//             include: {
-//                 model: Genre,
-//                 through: { attributes: [] }
-//             },
-//         });
-//         return game;
-//     }
-
-//     const game = (await axios.get(`${URL}/${id}${KEY}`)
-//     ).data;
-
-//     return game;
-// }
-
 const createVideogame = async (name, description, plataforms, image, released, rating) =>
     await Videogame.create({ name, description, plataforms, image, released, rating })
 
@@ -88,6 +71,5 @@ module.exports = {
     // getApiVideogames,
     // getDbVideogames,
     getAllVideogames,
-    // getVideogameById,
     createVideogame,
 };
