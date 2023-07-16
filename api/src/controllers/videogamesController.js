@@ -13,17 +13,20 @@ const getApiVideogames = async () => {
             await axios.get(`${URL}${KEY}`)
         );
 
+
         let results = [];
-        for (let i = 0; i < 5; i++) {
-            results = [...results, ...apiUrl.data.results];
-            response = await axios.get(apiUrl.data.next);
+        results = [...results, ...apiUrl.data.results];
+        for (let i = 0; i < 4; i++) {
+            let response = await axios.get(apiUrl.data.next);
+            results = [...results, ...response.data.results];
+            apiUrl.data.next = response.data.next;
         }
 
         const apiInfo = results.map((game) => {
             return {
                 // id: game.id,
                 name: game.name,
-                //description: game.description_raw,
+                // description: game.description_raw,
                 image: game.background_image,
                 // released: game.released,
                 // rating: game.rating,
